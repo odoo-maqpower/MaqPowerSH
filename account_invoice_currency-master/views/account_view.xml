@@ -1,0 +1,15 @@
+<odoo>
+
+    <record id="account_move_invoice_currency_form" model="ir.ui.view">
+        <field name="name">account.move.currency_rate.form</field>
+	<field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+	<field name="arch" type="xml">
+		<field name="fiscal_position_id" position="after">
+			<field name="purchase_currency_rate" attrs="{'invisible': [('type','!=','in_invoice'),('type','!=','in_refund')]}"/>
+		</field>
+        </field>
+    </record>
+
+
+</odoo>
